@@ -11,15 +11,15 @@
 	</nav>
 	<main>
 		<section id="containerCriarPedido">
-			<div>
+			<div id="nomeCliente">
 				<label>Nome do cliente: </label>
-				<input type="text">
+				<input type="text" th:field="*{cliente}">
 			</div>
-			<select id="" th:field="*{entregar}">
+			<select id="selecEntregar" th:field="*{entregar}">
 				<option value="true">Sim</option>
 				<option value="false">Não</option>
 			</select>
-			<div>
+			<div id="entregar">
 				<label>Endereço: </label>
 				<input type="text" th:field="*{endereco}">
 			</div>
