@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Página principal do sistema</title>
+</head>
+<body>
+	<nav>
+		<div>
+			<a th:href="@{/cardapio}">Cardapio</a>
+		</div>
+	</nav>
+	<main>
+		<section id="containerCriarPedido">
+			<div>
+				<label>Nome do cliente: </label>
+				<input type="text">
+			</div>
+			<select id="" th:field="*{entregar}">
+				<option value="true">Sim</option>
+				<option value="false">Não</option>
+			</select>
+			<div>
+				<label>Endereço: </label>
+				<input type="text" th:field="*{endereco}">
+			</div>
+		</section>
+		<section id="containerPedidos" th:each="pedido : ${pedidos}">
+			<div id="pedido${pedido.id}" class="pedido">
+				<div th:text="Cliente: ${pedido.cliente}"></div>
+				<div th:text="Para entrega: ${pedido.entregar}"></div>
+				<div th:text="Endereco: ${pedido.endereco}"></div>
+				<div th:text="Status: ${pedido.status}"></div>
+				<button>Excluir</button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
