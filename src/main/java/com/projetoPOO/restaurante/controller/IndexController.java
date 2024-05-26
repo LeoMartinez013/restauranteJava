@@ -11,39 +11,10 @@ import com.projetoPOO.restaurante.model.pedido.PedidoService;
 public class IndexController {
     @Autowired
     private PedidoService pedidoService;
+    
 
     @GetMapping("/")
-    public String index(Model model){
-        model.addAttribute("usuario", new Usuario());
+    public String index() {
         return "index";
     }
-
-    @PostMapping("/acessar")
-    public String acessar(@ModelAttribute Usuario usuario) {
-        Usuario usuarioValidado = usuarioService.validarUsuario(usuario.getNome(), usuario.getSenha());
-        if (usuarioValidado != null) {
-            return "painel"; // Redireciona para o painel se o usuário for válido
-        } else {
-            return "index"; // Permanece na página de login se o usuário ou senha estiverem incorretos
-        }
-    }
-
-    @GetMapping("/cadastro")
-    public String cadastro(Model model) {
-        model.addAttribute("usuario", new Usuario());
-        return "cadastro";
-    }
-
-    @PostMapping("/cadastrar")
-    public String cadastrar(@ModelAttribute Usuario usuario) {
-        usuarioService.inserirUsuario(usuario);
-        return "sucesso"; // Supondo que 'sucesso' seja uma página que confirma o cadastro do usuário
-    }
-
-    /*@GetMapping("/listar")
-    public String listar(Model model){
-        List<Usuario> lista = usuarioService.listarUsuarios();
-        model.addAttribute("lista", lista);
-        return "listar";
-    }*/
 }

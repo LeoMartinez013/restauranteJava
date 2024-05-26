@@ -8,31 +8,52 @@
 		<div>
 			<a th:href="@{/cardapio}">Cardapio</a>
 		</div>
+		<div>
+			<a th:href="@{/pedidos}"></a>
+		</div>
 	</nav>
 	<main>
 		<section id="containerCriarPedido">
 			<div id="nomeCliente">
 				<label>Nome do cliente: </label>
-				<input type="text" th:field="*{cliente}">
+				<input type="text">
 			</div>
-			<select id="selecEntregar" th:field="*{entregar}">
+			<select id="selecEntregar">
 				<option value="true">Sim</option>
 				<option value="false">Não</option>
 			</select>
 			<div id="entregar">
 				<label>Endereço: </label>
-				<input type="text" th:field="*{endereco}">
+				<input type="text">
+			</div>
+			<div>
+			<!-- Componente que listara os itens do cardapio
+				<input type="checkbox" id="itemCardapio${itemCardapio.id}">	
+			-->
 			</div>
 		</section>
-		<section id="containerPedidos" th:each="pedido : ${pedidos}">
-			<div id="pedido${pedido.id}" class="pedido">
-				<div th:text="Cliente: ${pedido.cliente}"></div>
-				<div th:text="Para entrega: ${pedido.entregar}"></div>
-				<div th:text="Endereco: ${pedido.endereco}"></div>
-				<div th:text="Status: ${pedido.status}"></div>
-				<button>Excluir</button>
+		<section id="containerPedidos">
+		<!-- Componente que lista todos os pedidos prontos -->
+			<div class="pedido">
+				<div th:text="">
+					<!--Cliente: ${pedido.cliente}-->
+				</div>
+				<div>
+					<!--Para entrega: ${pedido.entregar}-->
+				</div>
+				<div>
+					<!-- Endereco: ${pedido.endereco} -->
+				</div>
+				<div>
+					<!-- Status: ${pedido.status} -->
+				</div>
+				<button>
+				<!-- @onclick="deletePedido(${pedido.id})"-->
+					Excluir pedido
+				</button>
 			</div>
 		</section>
 	</main>
 </body>
+<script src="../static/index.js"></script>
 </html>
