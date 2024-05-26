@@ -1,4 +1,4 @@
-package com.projetoPOO.restaurante.model.usuario;
+package com.projetoPOO.restaurante.model.pedido;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

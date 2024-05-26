@@ -1,9 +1,7 @@
-package com.projetoPOO.restaurante.model.usuario;
+package com.projetoPOO.restaurante.model.pedido;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.projetoPOO.restaurante.model.pedido.*;;
 
 import java.util.List;
 
@@ -13,14 +11,13 @@ public class PedidoService {
     private PedidoRepository pedidoRepository;
     //  local onde devo colocar todas as funções que serão chamadas no indexController
 
-    public Pedido alterarStatus(int id, boolean status) {
-        Pedido pedido = pedidoRepository.findAllById(id);
-        
+    public void alterarIsPronto(int id, boolean pronto) {
+        pedidoRepository.updateIsPronto(id, pronto);
+
     }
     
     public Pedido buscarPedidoPorID(Pedido pedido) {
-        int id = pedido.getId();
-        return pedidoRepository.findById(id);
+        return pedidoRepository.findById(pedido.getId());
     }
     
     public Pedido inserirPedido(Pedido pedido) {

@@ -12,15 +12,15 @@ CREATE TABLE IF NOT EXISTS pedido (
      ic_Pronto      boolean
 );
 
-CREATE TABLE IF NOT EXISTS cardapio (
-     cd_IdCardapio       serial PRIMARY KEY,
-     nm_Cardapio         varchar(30),
+CREATE TABLE IF NOT EXISTS itemCardapio (
+     cd_IdItemCardapio       serial PRIMARY KEY,
+     nm_ItemCardapio         varchar(30),
      ds_Componentes      varchar(100)
 );
 
-CREATE TABLE IF NOT EXISTS item (
-     cd_IdItem           serial PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS itemPedido (
+     cd_IdItemPedido     serial PRIMARY KEY,
      cd_IdPedido         integer REFERENCES pedido(cd_IdPedido),
-     cd_ItemCardapio     integer REFERENCES cardapio(cd_IdCardapio),
+     cd_ItemCardapio     integer REFERENCES cardapio(cd_IdItemCardapio),
      ic_Pronto           boolean
 );

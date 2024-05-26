@@ -1,4 +1,4 @@
-package com.projetoPOO.restaurante.model.pedido;
+package com.projetoPOO.restaurante.model.itemCardapio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -7,12 +7,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
+public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Integer> {
     //  local onde devo colocar as funções CRUD mais especificas
     @Transactional
     @Modifying
-    @Query("UPDATE Pedido p SET p.ic_Pronto = :pronto WHERE p.cd_IdPedido = :id")
-    int updateIsPronto(int id, boolean pronto);
+    @Query("UPDATE ItemCardapio c SET c.nm_ItemCardapio = :nome WHERE c.cd_IdItemCardapio = :id")
+    boolean updateNome(int id, String nome);
 
-    Pedido findById(int id);
+    ItemCardapio findById(int id);
 }
