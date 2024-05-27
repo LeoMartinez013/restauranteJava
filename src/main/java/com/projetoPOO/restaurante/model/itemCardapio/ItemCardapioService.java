@@ -16,7 +16,8 @@ public class ItemCardapioService {
     }
     
     public boolean updateNomeItemCardapio(int id, String nome) {
-        return itemCardapioRepository.updateNome(id, nome);
+        // return itemCardapioRepository.updateNome(id, nome);
+        return false;
     }
 
     public ItemCardapio inserirItemCardapio(ItemCardapio cardapio) {

@@ -1,11 +1,12 @@
 package com.projetoPOO.restaurante.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class RestController {
-    @GetMapping("/")
+    @GetMapping("/rest")
     public String changeIndex() {
+        return "asd";
     }
 }

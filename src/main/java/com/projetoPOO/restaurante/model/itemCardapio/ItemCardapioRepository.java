@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Integer> {
     //  local onde devo colocar as funções CRUD mais especificas
-    @Transactional
-    @Modifying
-    @Query("UPDATE ItemCardapio c SET c.nm_ItemCardapio = :nome WHERE c.cd_IdItemCardapio = :id")
-    boolean updateNome(int id, String nome);
+    // @Transactional
+    // @Modifying
+    // @Query("UPDATE ItemCardapio c SET c.nm_ItemCardapio = :nome WHERE c.cd_IdItemCardapio = :id")
+    // boolean updateNome(int id, String nome);
 
     ItemCardapio findById(int id);
 }

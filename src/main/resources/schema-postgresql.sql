@@ -21,6 +21,6 @@ CREATE TABLE IF NOT EXISTS itemCardapio (
 CREATE TABLE IF NOT EXISTS itemPedido (
      cd_IdItemPedido     serial PRIMARY KEY,
      cd_IdPedido         integer REFERENCES pedido(cd_IdPedido),
-     cd_ItemCardapio     integer REFERENCES cardapio(cd_IdItemCardapio),
+     cd_ItemCardapio     integer REFERENCES itemCardapio(cd_IdItemCardapio),
      ic_Pronto           boolean
 );

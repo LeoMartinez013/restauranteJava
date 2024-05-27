@@ -5,34 +5,44 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 
-@Entity
+@Entity(name = "Usuario")
+@Table(name = "usuario")
+@EqualsAndHashCode(of = "id")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    @Column(name = "ic_ID")
-    private int id;
+    @Column(name = "cd_ID")
+    private Long id;
 
-    @Column(name = "ds_Nome")
+    @Column(name = "nm_Nome")
     private String nome;
 
     @Column(name = "ds_Senha")
     private String senha;
     
-    public Usuario() {
-
+    public Usuario(DadosCadastroUsuario dados) {
+        this.nome = dados.nome();
+        this.senha = dados.senha();
     }
-    
+
+    public Usuario() {
+    }
+
+
+
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
