@@ -37,7 +37,8 @@ public class HtmlController {
     }
 
     @PostMapping("/cadastro")
-    public ResponseEntity cadastrar(@ModelAttribute Usuario usuario) {
+    public ResponseEntity cadastrar(@RequestBody DadosCadastroUsuario dados) {
+        var usuario = new Usuario(dados);
         repository.save(usuario);
         var uri = UriComponentsBuilder.fromPath("/usuarios/{id}").buildAndExpand(usuario.getId()).toUri();
 
