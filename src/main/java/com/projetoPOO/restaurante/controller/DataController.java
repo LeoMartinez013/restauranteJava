@@ -23,6 +23,7 @@ public class DataController {
     // Endpoint para buscar itens do cardápio
     @GetMapping("/itens-cardapio")
     public List<ItemCardapio> getItensCardapio() {
+        return itemCardapioService.listarItensCardapio();
     }
 
     // Endpoint para buscar pedidos prontos
