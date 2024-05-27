@@ -1,0 +1,6 @@
+/*
+verifSenha()
+*/
+window.onload(() => {
+    
+})
