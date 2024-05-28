@@ -1,0 +1,37 @@
+:root {
+    --azul: #395873;
+    --laranja: #D96704;
+    --salmao: #F2AE72;
+    --bege: #F2E8DF;
+    --marrom: #26110D;
+}
+body {
+    background-color: var(--bege);
+    nav {
+        background-color: var(--marrom);
+        div {
+            background-color: var(--salmao);
+            color: var(--marrom);
+        }
+        div:hover {
+            background-color: var(--laranja);
+        }
+    }
+    main {
+        background-color: var(--bege);
+        color: #26110D;
+        section {
+            background-color: var(--salmao);
+            color: var(--marrom);
+            button {
+                background-color: var(--bege);
+                border-color: var(--laranja);
+            }
+            button:hover {
+                color: var(--bege);
+                background-color: var(--marrom);
+                border-color: var(--laranja);
+            }
+        }
+    }
+}
