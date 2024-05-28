@@ -1,19 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-	<title>Cadastro</title>
+    <title>Cadastro</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<main>
-		<form action="#" th:action="@{/cadastrar}" method=post th:object="${cliente}">
-			<label>Nome: </label>
-			<input type="text" th:field="*{nome}"><br>
-			<label>Senha: </label>
-			<input type="text" th:field="*{senha}">
-			<label>Repita a senha: </label>
-			<input type="text" th:field="*{senha}">
-			<input type="submit" value="Cadastrar">
-		</form>
-	</main>
+    <main>
+        <form id="cadastroForm">
+            <label>Nome: </label>
+            <input type="text" id="nome"><br>
+            <label>Senha: </label>
+            <input type="password" id="senha">
+            <label>Repita a senha: </label>
+            <input type="password" id="senhaRepetida">
+            <input type="submit" value="Cadastrar">
+        </form>
+    </main>
+
+    <script>
+        $(document).ready(function() {
+            $("#cadastroForm").submit(function(event) {
+                event.preventDefault();
+
+                var nome = $("#nome").val();
+                var senha = $("#senha").val();
+                var senhaRepetida = $("#senhaRepetida").val();
+
+                var usuario = {
+                    nome: nome,
+                    senha: senha,
+                    senhaRepetida: senhaRepetida
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/cadastro",
+                    data: JSON.stringify(usuario),
+                    contentType: "application/json",
+                    success: function(data) {
+                        console.log(data);
+						alert("Usuario Cadastrado com Sucesso!"
+						+"\nID: " + data.id + "\nNome: " + data.nome);
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

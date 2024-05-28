@@ -11,13 +11,13 @@ public class PedidoService {
     private PedidoRepository pedidoRepository;
     //  local onde devo colocar todas as funções que serão chamadas no indexController
 
-    public void alterarIsPronto(int id, boolean pronto) {
-        pedidoRepository.updateIsPronto(id, pronto);
+    public void alterarIsPronto(Long id, boolean pronto) {
+        // pedidoRepository.updateIsPronto(id, pronto);
 
     }
     
     public Pedido buscarPedidoPorID(Pedido pedido) {
-        return pedidoRepository.findById(pedido.getId());
+        return pedidoRepository.getReferenceById(pedido.getId());
     }
     
     public Pedido inserirPedido(Pedido pedido) {

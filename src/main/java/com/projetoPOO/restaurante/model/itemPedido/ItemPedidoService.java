@@ -12,7 +12,8 @@ public class ItemPedidoService {
     //  local onde devo colocar todas as funções que serão chamadas no indexController
 
     public boolean alterarIsPronto(int id, boolean isPronto) {
-        return itemPedidoRepository.updateIsPronto(id, isPronto);
+        // return itemPedidoRepository.updateIsPronto(id, isPronto);
+        return false;
     }
     
     public ItemPedido buscarItemPedidoPorID(ItemPedido pedido) {
@@ -26,10 +27,12 @@ public class ItemPedidoService {
     }
 
     public boolean deleteAllItensPedido(int idPedido) {
-        return itemPedidoRepository.deleteAllByIdPedido(idPedido);
+        // return itemPedidoRepository.deleteAllByIdPedido(idPedido);
+        return false;
     }
 
     public List<ItemPedido> listarItensPedido(int idPedido) {
-        return itemPedidoRepository.findByIdPedido(idPedido);
+        // return itemPedidoRepository.findByIdPedido(idPedido);
+        return null;
     }
 }

@@ -5,13 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "pedido")
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "cd_IdPedido")
-    private int id;
+    private Long id;
 
     @Column(name = "nm_Cliente")
     private String cliente;
@@ -25,14 +27,22 @@ public class Pedido {
     @Column(name = "ic_Pronto")
     private boolean pronto;
 
+    public Pedido(Long id, String cliente, boolean entregar, String endereco, boolean pronto) {
+        this.id = id;
+        this.cliente = cliente;
+        this.entregar = entregar;
+        this.endereco = endereco;
+        this.pronto = pronto;
+    }
+
     public Pedido() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
