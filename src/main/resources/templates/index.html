@@ -19,11 +19,11 @@
 			<h2>Registrar pedidos</h2>
 			<div id="nomeCliente">
 				<label>Nome do cliente: </label>
-				<input type="text">
+				<input type="text" id="inputNomeCliente">
 			</div>
 			<div id="entregar">
 				<label>Entregar: </label>
-				<select id="selecEntregar">
+				<select id="selecEntregar" itemid="selectEntregar">
 					<option value="true">Sim</option>
 					<option value="false">Não</option>
 				</select>
@@ -31,51 +31,22 @@
 				
 			<div id="endereco">
 				<label>Endereço: </label>
-				<input type="text">
+				<input type="text" id="inputEndereco">
 			</div>
 			<div id="containerButtonAddPedido">
-				<button id="buttonAddPedido">
+				<button 
+					id="buttonAddPedido" 
+					onclick="adicionarPedido()">
 				<!--TODO função js registrarPedido()-->
 					Adicionar pedido
 				</button>
 			</div>
 			<div id="cardapio">
-			<!-- Componente que listara os itens do cardapio -->
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum maior
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
-				<button class="itemCardapio">
-					lorem ipsum 
-				</button>
+			<!-- Componente que listara os itens do cardapio
+				<button id="itemCardapio{itemCardapio}" class="itemCardapio">
+					${itemCardapio.nome}
+				</button> -->
 				
-
 			</div>
 			
 		</section>
