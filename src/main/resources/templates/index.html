@@ -3,11 +3,12 @@
 <head>
 	<title>Página principal do sistema</title>
 	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/themes/theme1.css">
 </head>
 <body>
 	<nav>
 		<div>
-			<a th:href="@{/cardapio}">Cardapio</a>
+			<a th:href="@{/cardapio}">cardápio</a>
 		</div>
 		<div>
 			<a th:href="@{/pedidos}">pedidos</a>
@@ -15,39 +16,96 @@
 	</nav>
 	<main>
 		<section id="containerCriarPedido">
+			<h2>Registrar pedidos</h2>
 			<div id="nomeCliente">
 				<label>Nome do cliente: </label>
 				<input type="text">
 			</div>
+<<<<<<< HEAD
 			<label>Entregar: </label>
 			<select id="selecEntregar">
 				<option value="true">Sim</option>
 				<option value="false">Não</option>
 			</select>
+=======
+>>>>>>> branch1
 			<div id="entregar">
+				<label>Entregar: </label>
+				<select id="selecEntregar">
+					<option value="true">Sim</option>
+					<option value="false">Não</option>
+				</select>
+			</div>
+				
+			<div id="endereco">
 				<label>Endereço: </label>
 				<input type="text">
 			</div>
-			<div>
-			<!-- Componente que listara os itens do cardapio
-				<input type="checkbox" id="itemCardapio${itemCardapio.id}">	
-			-->
+			<div id="containerButtonAddPedido">
+				<button id="buttonAddPedido">
+				<!--TODO função js registrarPedido()-->
+					Adicionar pedido
+				</button>
 			</div>
+			<div id="cardapio">
+			<!-- Componente que listara os itens do cardapio -->
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum maior
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				<button class="itemCardapio">
+					lorem ipsum 
+				</button>
+				
+
+			</div>
+			
 		</section>
-		<section id="containerPedidos">
+		<section id="containerPedidosProntos">
+			<h2>Pedidos prontos</h2>
 		<!-- Componente que lista todos os pedidos prontos -->
 			<div class="pedido">
 				<div th:text="">
+					Joao
 					<!--Cliente: ${pedido.cliente}-->
 				</div>
 				<div>
+					Entregar
 					<!--Para entrega: ${pedido.entregar}-->
 				</div>
 				<div>
+					Rua Tal, 23
 					<!-- Endereco: ${pedido.endereco} -->
 				</div>
 				<div>
-					<!-- Status: ${pedido.status} -->
+					R$ 13,00
+					<!-- Valor: ${pedido.valor} -->
 				</div>
 				<button>
 				<!-- @onclick="deletePedido(${pedido.id})"-->
