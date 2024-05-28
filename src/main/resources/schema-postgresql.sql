@@ -24,3 +24,5 @@ CREATE TABLE IF NOT EXISTS itemPedido (
      cd_ItemCardapio     integer REFERENCES itemCardapio(cd_IdItemCardapio),
      ic_Pronto           boolean
 );
+
+ALTER TABLE itemCardapio ADD COLUMN IF NOT EXISTS vl_Preco MONEY;

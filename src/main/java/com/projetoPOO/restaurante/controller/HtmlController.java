@@ -45,5 +45,11 @@ public class HtmlController {
         return ResponseEntity.created(uri).body(new DadosDetalhamentoUsuario(usuario));
         
     }
+
+    @GetMapping("/cardapio")
+    public ResponseEntity<Resource> cardapio() {
+        Resource resource = new ClassPathResource("/templates/cardapio.html");
+        return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(resource);
+    }
     
 }

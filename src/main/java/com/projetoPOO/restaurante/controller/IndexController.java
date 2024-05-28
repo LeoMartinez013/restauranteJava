@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
+    // @GetMapping("/")
+    // public String index() {
+    //     return "index";
+    // }
 
-    @GetMapping("/pedido")
-    public String pedido() {
-        return "pedido";
-    }
+    // @GetMapping("/pedido")
+    // public String pedido() {
+    //     return "pedido";
+    // }
 
-    @GetMapping("/cardapio")
-    public String cardapio() {
-        return "cardapio";
-    }
+    // @GetMapping("/cardapio")
+    // public String cardapio() {
+    //     return "cardapio";
+    // }
 }
