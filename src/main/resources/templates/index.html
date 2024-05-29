@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Página principal do sistema</title>
-	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/themes/theme1.css">
+	<link rel="stylesheet" th:href="@{css/style.css}">
+	<link rel="stylesheet" th:href="@{css/themes/theme1.css}">
+	<!--TODO eu tinha deixado apenas 'href', mas mesmo com o 'th:herf', os arquivos do /resouces não foram carregados-->
 </head>
 <body>
 	<nav>
@@ -79,5 +80,5 @@
 	</main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../static/js/index.js"></script>
+<script th:src="@{js/index.js}"></script>
 </html>
