@@ -7,10 +7,10 @@
 </head>
 <body>
 	<nav>
-		<div>
+		<div id="goToCardapio">
 			<a th:href="@{/cardapio}">cardápio</a>
 		</div>
-		<div>
+		<div id="goToPedidos">
 			<a th:href="@{/pedidos}">pedidos</a>
 		</div>
 	</nav>
@@ -80,8 +80,9 @@
 			
 		</section>
 		<section id="containerPedidosProntos">
-			<h2>Pedidos prontos</h2>
 		<!-- Componente que lista todos os pedidos prontos -->
+		<!--TODO criar função js listar listarPedidosProntos() -->
+			<h2>Pedidos Prontos</h2>
 			<div class="pedido">
 				<div th:text="">
 					Joao
@@ -100,12 +101,13 @@
 					<!-- Valor: ${pedido.valor} -->
 				</div>
 				<button>
-				<!-- @onclick="deletePedido(${pedido.id})"-->
+				<!--TODO criar função js deletePedido(${pedido.id}) -->
 					Excluir pedido
 				</button>
 			</div>
 		</section>
 	</main>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../static/js/index.js"></script>
 </html>
