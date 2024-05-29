@@ -29,6 +29,7 @@ public class HtmlController {
         Resource resource = new ClassPathResource("/templates/index.html");
         return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(resource);
     }
+    
 
     @GetMapping("/cadastro")
     public ResponseEntity<Resource> cadastro() {
