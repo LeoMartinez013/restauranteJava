@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Página principal do sistema</title>
+	<link rel="stylesheet" href="../static/css/cardapio.css">
+	<link rel="stylesheet" href="../static/css/themes/theme1.css">
+	<title>Cardápio</title>
 </head>
-<body>
+<!-- 
+	TODO: /cardapio mapeado
+	listar os produtos: [GET] /itens-cardapio
+	buscar produtos: 	[GET] /itens-cardapio/{id}
+	cadastrar produtos: [POST] /itens-cardapio
+-->
+<body id="cardapio" class="bodys">
 	<nav>
 		<div>
 			<a th:href="@{/index}">Menu</a>
-		<!-- 
-			TODO: /cardapio mapeado
-			listar os produtos: [GET] /itens-cardapio
-			buscar produtos: 	[GET] /itens-cardapio/{id}
-			cadastrar produtos: [POST] /itens-cardapio
-		-->
+		</div>
+		<div>
+			<a th:href="@{/pedidos}">Pedidos</a>
 		</div>
 	</nav>
 	<main>
 		<section id="containerCardapio">
-			
+		<!--TODO listagem dos itens do cardapio-->
+			<h2>cardápio</h2>
+			<div id="itemCardapio1" class="itensCardapio">
+				<div id="nomeIC" class="nomeIC">
+					lorem impsum
+				</div>
+				<div id="precoIC1" class="preco">
+					12,00
+				</div>
+				<button id="excluirIC1" class="excluir">
+					excluir
+				</button>
+				<div id="compIC1" class="componentes">
+					batata, arroz, feijão e bife
+				</div>
+			</div>
 		</section>
 		<section id="AddItemCardapio">
-			<div>
+			<h2>Adicionar itens ao cardápio</h2>
+			<div id="campoNome">
 				<label>Nome: </label>
 				<input type="text" id="inputNome">
 			</div>
-			<div>
+			<div id="campoPreco">
 				<label>Preço: </label>
 				<input type="text" id="inputPreco">
 			</div>
-			<div>
+			<div id="containerButtonAdd">
+				<button id="buttonAdd">
+					adicionar item
+				</button>
+			</div>
+			<div id="campoIngredientes">
 				<label>ingredientes: </label>
 				<input type="text" id="inputIngredientes">
 			</div>
-			<button id="buttonAdd">
-				adicionar item ao cardápio
-			</button>
 		</section>
 	</main>
 </body>

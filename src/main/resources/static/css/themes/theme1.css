@@ -23,6 +23,7 @@ body {
         section {
             background-color: var(--salmao);
             color: var(--marrom);
+            border-color: var(--azul);
             button {
                 background-color: var(--bege);
                 border-color: var(--laranja);
@@ -31,6 +32,9 @@ body {
                 color: var(--bege);
                 background-color: var(--marrom);
                 border-color: var(--laranja);
+            }
+            .itensCardapio {
+                border-bottom-color: var(--azul);
             }
         }
     }
