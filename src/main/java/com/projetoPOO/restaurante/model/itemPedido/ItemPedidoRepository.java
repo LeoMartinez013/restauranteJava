@@ -9,14 +9,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Integer> {
+public interface ItemPedidoRepository extends JpaRepository<ItemPedido, Long> {
     //  local onde devo colocar as funções CRUD mais especificas
     // @Transactional
     // @Modifying
     // @Query("UPDATE ItemPedido i SET i.ic_Pronto = :isPronto WHERE p.cd_IdItemPedido = :id")
     // boolean updateIsPronto(int id, boolean isPronto);
 
-    ItemPedido findById(int id);
+    // ItemPedido findById(Long id);
 
     // @Query("DELETE ItemPedido i WHERE i.cd_IdPedido = :idPedido")
     // boolean deleteAllByIdPedido(int idPedido);

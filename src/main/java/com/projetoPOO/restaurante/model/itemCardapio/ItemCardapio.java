@@ -1,33 +1,36 @@
 package com.projetoPOO.restaurante.model.itemCardapio;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-//@Table(name = "item_cardapio") Confirmar nome da tabela
+@Table(name = "itemcardapio")
 public class ItemCardapio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    @Column(name = "cd_IdItemCardapio ")
+    @Column(name = "cd_iditemcardapio ")
     private Long id;
 
-    @Column(name = "nm_ItemCardapio")
+    @Column(name = "nm_itemcardapio")
     private String nome;
 
-    @Column(name = "ds_Componentes")
+    @Column(name = "ds_componentes")
     private String componentes;
 
-    @Column(name = "vl_Preco")
-    private double preco;
+    @Column(name = "vl_preco")
+    private BigDecimal preco;
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
