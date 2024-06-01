@@ -13,11 +13,13 @@
 <body id="index" class="bodys">
 	<nav>
 		<div id="goToCardapio">
-			<a href="/cardapio">cardápio</a>
+			<a href="/cardapio">
+				<div>cardápio</div></a>
 		</div>
 		<!-- Tirei o th: do thymeleaf -->
 		<div id="goToPedidos">
-			<a href="/pedidos">pedidos</a>
+			<a href="/pedidos">
+				<div>pedidos</div></a>
 		</div>
 	</nav>
 	<main>
@@ -86,5 +88,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script th:src="@{js/index.js}"></script>
-<script src="../static/js/index.js"></script>
+<script src="../js/index.js"></script>
 </html>

@@ -16,7 +16,7 @@ async function addItemPedido(id) {
 }
 async function listarCardapio() {
     $.ajax({
-        url: '/itens-cardapio',
+        url: '/api-cardapio',
         type: 'GET',
         success: function(data) {
             

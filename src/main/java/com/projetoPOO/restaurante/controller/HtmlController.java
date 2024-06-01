@@ -52,5 +52,11 @@ public class HtmlController {
         Resource resource = new ClassPathResource("/templates/cardapio.html");
         return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(resource);
     }
+
+    @GetMapping("/pedidos")
+    public ResponseEntity<Resource> pedidos() {
+        Resource resource = new ClassPathResource("/templates/pedidos.html");
+        return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(resource);
+    }
     
 }

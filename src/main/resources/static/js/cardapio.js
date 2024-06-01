@@ -1,5 +1,5 @@
 window.onload = function() {
-    //listarCardapio()
+    // ListarCardapio()
     
 }
 async function ListarCardapio() {
