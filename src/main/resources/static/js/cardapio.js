@@ -4,7 +4,7 @@ window.onload = function() {
 }
 async function ListarCardapio() {
     $.ajax({
-        url: '/itens-cardapio',
+        url: '/api-cardapio',
         type: 'GET',
         success: function(data) {
             

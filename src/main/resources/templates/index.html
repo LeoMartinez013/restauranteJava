@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<meta charset="UTF-8">
 	<title>Página principal do sistema</title>
 	<link rel="stylesheet" th:href="@{css/style.css}">
 	<link rel="stylesheet" th:href="@{css/themes/theme1.css}">
-	<link rel="stylesheet" href="../static/css/style.css">
-	<link rel="stylesheet" href="../static/css/themes/theme1.css">
-	<!--TODO eu tinha deixado apenas 'href', mas mesmo com o 'th:herf', os arquivos do /resouces não foram carregados-->
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/themes/theme1.css">
+	<!--TODO eu tinha deixado apenas 'href', mas mesmo com o 'th:herf', os arquivos do /resouces não foram carregados
+	Apaguei o /static/ do caminho e funcionou-->
 </head>
 <body id="index" class="bodys">
 	<nav>
 		<div id="goToCardapio">
-			<a th:href="@{/cardapio}">cardápio</a>
+			<a href="/cardapio">cardápio</a>
 		</div>
+		<!-- Tirei o th: do thymeleaf -->
 		<div id="goToPedidos">
-			<a th:href="@{/pedidos}">pedidos</a>
+			<a href="/pedidos">pedidos</a>
 		</div>
 	</nav>
 	<main>

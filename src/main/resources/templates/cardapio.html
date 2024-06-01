@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" th:href="@{css/cardapio.css}">
 	<link rel="stylesheet" th:href="@{css/themes/theme1.css}">
-	<link rel="stylesheet" href="../static/css/cardapio.css">
-	<link rel="stylesheet" href="../static/css/themes/theme1.css">
+	<link rel="stylesheet" href="../css/cardapio.css">
+	<link rel="stylesheet" href="../css/themes/theme1.css">
 	<title>Cardápio</title>
 </head>
 <!-- 
 	TODO: /cardapio mapeado
-	listar os produtos: [GET] /itens-cardapio
-	buscar produtos: 	[GET] /itens-cardapio/{id}
-	cadastrar produtos: [POST] /itens-cardapio
+	listar os produtos: [GET] /api-cardapio
+	buscar produtos: 	[GET] /api-cardapio/{id}
+	cadastrar produtos: [POST] /api-cardapio
 -->
 <body id="cardapio" class="bodys">
 	<nav>
 		<div>
-			<a th:href="@{/index}">Menu</a>
+			<a href="/">Menu</a>
 		</div>
 		<div>
-			<a th:href="@{/pedidos}">Pedidos</a>
+			<a href="/pedidos">Pedidos</a>
 		</div>
 	</nav>
 	<main>
@@ -63,5 +64,5 @@
 		</section>
 	</main>
 </body>
-<script th:src="@{src/cardapio.js}"></script>
+<script src="js/cardapio.js"></script>
 </html>

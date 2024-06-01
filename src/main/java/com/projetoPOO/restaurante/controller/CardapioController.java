@@ -21,7 +21,7 @@ import jakarta.transaction.Transactional;
 
 
 @RestController
-@RequestMapping("/itens-cardapio")
+@RequestMapping("/api-cardapio")
 public class CardapioController {
 
     @Autowired
